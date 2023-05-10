@@ -1,11 +1,11 @@
 import UIKit
 
 protocol SegmentedItemFactoryInterface {
-    static func make(_ mode: CustomSegemtendControl.SegmentedItemMode) -> UIView
+    static func make(_ mode: CustomSegmentedControl.SegmentedItemMode) -> UIView
 }
  
 struct SegmentedItemFactory: SegmentedItemFactoryInterface {
-    static func make(_ mode: CustomSegemtendControl.SegmentedItemMode) -> UIView {
+    static func make(_ mode: CustomSegmentedControl.SegmentedItemMode) -> UIView {
         switch mode {
         case .justTitle(let title):
             return DefaultSegmentedItemView.make(title: title, image: nil, indicatorColor: nil)

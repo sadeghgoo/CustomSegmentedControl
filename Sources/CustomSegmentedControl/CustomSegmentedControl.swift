@@ -1,8 +1,8 @@
 import UIKit
 
-public class CustomSegemtendControl: UIView {
-    public weak var delegate: CustomSegementedControlDelegate?
-    public weak var datasSource: CustomSegementedControlDataSource?
+public class CustomSegmentedControl: UIView {
+    public weak var delegate: CustomSegmentedControlDelegate?
+    public weak var datasSource: CustomSegmentedControlDataSource?
            
     private let indicatorViewTag: Int = 10001
     
@@ -105,7 +105,7 @@ public class CustomSegemtendControl: UIView {
     }
 }
 
-extension CustomSegemtendControl {
+extension CustomSegmentedControl {
     public enum SegmentedItemMode {
         case justTitle(String)
         case titleAndImage(String, UIImage)
@@ -113,7 +113,7 @@ extension CustomSegemtendControl {
     }
 }
 
-extension CustomSegemtendControl {
+extension CustomSegmentedControl {
     public struct IndicatorProperties {
         var color: UIColor = .systemGreen
         var borderWidth: CGFloat = 0
