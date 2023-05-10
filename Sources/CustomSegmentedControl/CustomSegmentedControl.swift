@@ -120,5 +120,13 @@ public extension CustomSegmentedControl {
         var borderColor: UIColor = .clear
         var height: CGFloat = 4
         var padding: UIEdgeInsets = .zero
+        
+        public init(color: UIColor, borderWidth: CGFloat, borderColor: UIColor, height: CGFloat, padding: UIEdgeInsets) {
+            self.color = color
+            self.borderWidth = borderWidth
+            self.borderColor = borderColor
+            self.height = height
+            self.padding = padding
+        }
     }
 }
