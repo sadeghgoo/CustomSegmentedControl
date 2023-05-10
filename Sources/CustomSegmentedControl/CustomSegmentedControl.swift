@@ -100,7 +100,7 @@ public class CustomSegmentedControl: UIView {
     @objc private func itemDidTap(_ gesture: UITapGestureRecognizer) {
         if let tag = gesture.view?.tag {
             itemDidSelect(itemTag: tag)
-            delegate?.segmetendItemDidTap(self, itemIndex: tag)
+            delegate?.segmentedItemDidTap(self, itemIndex: tag)
         }
     }
 }
