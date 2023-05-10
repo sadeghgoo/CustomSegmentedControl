@@ -106,7 +106,7 @@ public class CustomSegmentedControl: UIView {
 }
 
 public extension CustomSegmentedControl {
-    public enum SegmentedItemMode {
+    enum SegmentedItemMode {
         case justTitle(String)
         case titleAndImage(String, UIImage)
         case custom(UIView)
@@ -114,7 +114,7 @@ public extension CustomSegmentedControl {
 }
 
 public extension CustomSegmentedControl {
-    public struct IndicatorProperties {
+    struct IndicatorProperties {
         var color: UIColor = .systemGreen
         var borderWidth: CGFloat = 0
         var borderColor: UIColor = .clear
