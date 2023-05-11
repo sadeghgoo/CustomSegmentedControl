@@ -73,6 +73,7 @@ public class CustomSegmentedControl: UIView {
         indicatorView.backgroundColor = properties.color
         indicatorView.layer.borderColor = properties.borderColor.cgColor
         indicatorView.layer.borderWidth = properties.borderWidth
+        indicatorView.layer.side
         return indicatorView
     }
   
@@ -115,16 +116,12 @@ public extension CustomSegmentedControl {
 
 public extension CustomSegmentedControl {
     struct IndicatorProperties {
-        var color: UIColor = .systemGreen
-        var borderWidth: CGFloat = 0
-        var borderColor: UIColor = .clear
-        var height: CGFloat = 4
-        var padding: UIEdgeInsets = .zero
+        private let backgroundColor: UIColor
+        private let height: CGFloat
+        private let padding: UIEdgeInsets
         
-        public init(color: UIColor, borderWidth: CGFloat, borderColor: UIColor, height: CGFloat, padding: UIEdgeInsets) {
-            self.color = color
-            self.borderWidth = borderWidth
-            self.borderColor = borderColor
+        public init(backgroundColor: UIColor = .systemGray, height: CGFloat = 1, padding: UIEdgeInsets = .zero) {
+            self.backgroundColor = backgroundColor
             self.height = height
             self.padding = padding
         }
