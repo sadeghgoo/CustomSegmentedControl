@@ -1,12 +1,13 @@
 import UIKit
 
 public class CustomSegmentedControl: UIView {
+    // MARK: - Public Properties
     public weak var delegate: CustomSegmentedControlDelegate?
     public weak var datasSource: CustomSegmentedControlDataSource?
            
     private let indicatorViewTag: Int = 10001
     
-    private lazy var stackView: UIStackView = {
+    private var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.axis = .horizontal
@@ -15,6 +16,7 @@ public class CustomSegmentedControl: UIView {
         return stackView
     }()
     
+    // MARK: - Initializers
     public init(padding: UIEdgeInsets) {
         super.init(frame: .zero)
         addStackView(padding: padding)
@@ -29,8 +31,7 @@ public class CustomSegmentedControl: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Public methods
-    
+    // MARK: - Public Methods
     public func reloadData() {
         stackView.arrangedSubviews.forEach { child in
             child.removeFromSuperview()
@@ -48,11 +49,9 @@ public class CustomSegmentedControl: UIView {
         
         itemDidSelect(itemTag: 0)
         stackView.spacing = datasSource?.segmentedItemSpacing(self) ?? 8
-
     }
     
-    // MARK: - Private methods
-    
+    // MARK: - Private Methods
     private func addIndicatorView(parentView: UIView) {
         if let indicatorProperties = datasSource?.segmentedIndicatorView(self) {
             let indicatorView = makeIndicatorView(properties: indicatorProperties)
@@ -103,6 +102,7 @@ public class CustomSegmentedControl: UIView {
     }
 }
 
+// MARK: - Public Extensions
 public extension CustomSegmentedControl {
     enum SegmentedItemMode {
         case justTitle(String)
