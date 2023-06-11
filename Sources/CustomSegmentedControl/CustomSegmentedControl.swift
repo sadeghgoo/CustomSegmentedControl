@@ -53,7 +53,7 @@ public class CustomSegmentedControl: UIView {
             }
         }
         
-        itemDidSelect(itemTag: 0)
+        itemDidSelect(itemTag: selectedIndex)
         stackView.spacing = datasSource?.segmentedItemSpacing(self) ?? 8
     }
     
@@ -93,7 +93,7 @@ public class CustomSegmentedControl: UIView {
     
     private func itemDidSelect(itemTag: Int) {
         if let _ = datasSource?.segmentedIndicatorView(self) {
-            if let index = stackView.arrangedSubviews.firstIndex(where: {$0.tag == itemTag}), let indicatorIndex = stackView.arrangedSubviews[index].subviews.firstIndex(where: {$0.tag == indicatorViewTag }) {
+            if let index = stackView.arrangedSubviews.firstIndex(where: {$0.tag == itemTag}), let indicatorIndex = stackView.arrangedSubviews[index].subviews.firstIndex(where: {$0.tag == indicatorViewTag}) {
                 stackView.arrangedSubviews.forEach { arrangedSubview in
                     arrangedSubview.subviews[indicatorIndex].isHidden = true
                 }
