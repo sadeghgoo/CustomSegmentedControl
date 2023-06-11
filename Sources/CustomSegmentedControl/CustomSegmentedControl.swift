@@ -5,6 +5,12 @@ public class CustomSegmentedControl: UIView {
     public weak var delegate: CustomSegmentedControlDelegate?
     public weak var datasSource: CustomSegmentedControlDataSource?
            
+    public var selectedIndex: Int = 0 {
+        didSet {
+            itemDidSelect(itemTag: tag)
+        }
+    }
+    
     private let indicatorViewTag: Int = 10001
     
     private var stackView: UIStackView = {
@@ -51,10 +57,7 @@ public class CustomSegmentedControl: UIView {
         stackView.spacing = datasSource?.segmentedItemSpacing(self) ?? 8
     }
     
-    public func selectItem(_ tag: Int) {
-        itemDidSelect(itemTag: tag)
-        delegate?.segmentedItemDidTap(self, itemIndex: tag)
-    }
+   
     
     // MARK: - Private Methods
     private func addIndicatorView(parentView: UIView) {
